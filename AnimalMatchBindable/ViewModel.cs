@@ -37,7 +37,7 @@ public partial class ViewModel : ObservableObject
     {
         tenthsOfSecondsElapsed++;
         LabelText = "Time elapsed: " + (tenthsOfSecondsElapsed / 10F).ToString("0.0s");
-        if (matchesFound == 8)
+        if (PlayAgainButtonIsVisible)
         {
             tenthsOfSecondsElapsed = 0;
             return false;
@@ -52,6 +52,8 @@ public partial class ViewModel : ObservableObject
     private void ButtonClicked(object parameter)
     {
         if (parameter is not Button button) return;
+        if (string.IsNullOrWhiteSpace(button.Text)) return;
+        
         if (lastClicked == null)
         {
             button.BackgroundColor = Colors.Red;
@@ -73,9 +75,9 @@ public partial class ViewModel : ObservableObject
 
         if (matchesFound == 8)
         {
-            matchesFound = 0;
             AnimalButtonsIsVisible = false;
             PlayAgainButtonIsVisible = true;
+            matchesFound = 0;
         }
     }
 }
