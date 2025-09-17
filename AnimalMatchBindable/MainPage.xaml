@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:animalMatchBindable="clr-namespace:AnimalMatchBindable"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             x:Class="AnimalMatchBindable.MainPage"
+             x:DataType="animalMatchBindable:ViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,30" Spacing="25">
+
+            <Button Text="Play again?"
+                    FontSize="Large"
+                    IsVisible="{Binding PlayAgainButtonIsVisible}"
+                    Command="{Binding PlayAgainButtonCommand}"/>
+
+            <Label Text="{Binding LabelText}"
+                   FontSize="Large"/>
+
+            <FlexLayout BindableLayout.ItemsSource="{Binding ShuffledEmojis}"
+                        Wrap="Wrap"
+                        MaximumWidthRequest="400"
+                        IsVisible="{Binding AnimalButtonsIsVisible}">
+
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="sys:String">
+                        <Button Text="{Binding}"
+                                BackgroundColor="LightBlue"
+                                BorderColor="Black"
+                                BorderWidth="1"
+                                HeightRequest="100"
+                                WidthRequest="100"
+                                FontSize="60"
+                                Command="{Binding ButtonClickedCommand, 
+                                    Source={RelativeSource AncestorType={x:Type animalMatchBindable:ViewModel, 
+                                    x:DataType=animalMatchBindable:ViewModel}}}"
+                                CommandParameter="{Binding Source={RelativeSource Self}, x:DataType=Button}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+
+            </FlexLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

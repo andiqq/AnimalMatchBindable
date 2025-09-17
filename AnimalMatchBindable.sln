@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalMatchBindable", "AnimalMatchBindable\AnimalMatchBindable.csproj", "{8D8DF206-05F4-4C3C-A711-4DF43983BB78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D8DF206-05F4-4C3C-A711-4DF43983BB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D8DF206-05F4-4C3C-A711-4DF43983BB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D8DF206-05F4-4C3C-A711-4DF43983BB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D8DF206-05F4-4C3C-A711-4DF43983BB78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
