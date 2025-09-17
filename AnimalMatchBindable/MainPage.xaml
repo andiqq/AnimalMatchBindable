@@ -32,8 +32,8 @@
                                 WidthRequest="100"
                                 FontSize="60"
                                 Command="{Binding ButtonClickedCommand, 
-                                    Source={RelativeSource AncestorType={x:Type animalMatchBindable:ViewModel, 
-                                    x:DataType=animalMatchBindable:ViewModel}}}"
+                                    Source={RelativeSource AncestorType={x:Type animalMatchBindable:ViewModel 
+                                    }}, x:DataType=animalMatchBindable:ViewModel}"
                                 CommandParameter="{Binding Source={RelativeSource Self}, x:DataType=Button}"/>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
